@@ -2,7 +2,14 @@ package som.zd.sort;
 
 public class SelectSort {
 	int n;
-	int[] a;
+	long[] a;
+	
+	public void swap(int dis1,int dis2){
+		long temp = a[dis1];
+		a[dis1] = a[dis2];
+		a[dis2] = temp;
+	}
+	
 	public void selectSort(){
 		int out,in,min;
 		for(out=0;out<n-1;out++){
@@ -12,9 +19,7 @@ public class SelectSort {
 					min = in;
 				}
 			}
-			int temp = a[min];
-			a[min] = a[out];
-			a[out] = temp;
+			swap(min,out);
 		}
 	}
 
